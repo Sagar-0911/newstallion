@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style/css/style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="style/css/pc.css"> -->
+    <link href="{{url_for('static', filename='css/style.css')}}" rel="stylesheet">
+    <script src="https://use.fontawesome.com/8cdce62966.js"></script>
+
+
+
+    <title>Stallion Stainless | Product Description</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">Stallion Stainless</div>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav class="nav-bar active">
+            <ul>
+                <li>
+                    <a href="./index.html" class="active">HOME</a>
+                </li>
+                <li>
+                    <a href="./category.html">Product</a>
+                </li>
+                <li>
+                    <a href="">Service</a>
+                </li>
+                <li>
+                    <a href="">about us</a>
+                </li>
+                <li>
+                    <a href="">contact us</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <br>
+    <div class="product_description">
+        <div class="container_p">
+            <div class="card_p">
+                <!-- <div class="shoeBackground">
+
+                    <div class="gradients">
+                        <div class="gradient second" color="blue"></div>
+                        <div class="gradient" color="red"></div>
+                        <div class="gradient" color="green"></div>
+                        <div class="gradient" color="orange"></div>
+                        <div class="gradient" color="black"></div>
+                    </div>
+                    <h1 class="nike">SOFA</h1>
+                    <img src="" alt="" class="logo_p">
+                    <a href="#" class="share"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+
+                    <img src="./style/img/blue3.jpeg" id="blue" alt="" class="shoe show" color="blue">
+                    <img src="./style/img/2.jpg" id="red" alt="" class="shoe " color="red">
+                    <img src="./style/img/3.jpg" id="green" alt="" class="shoe " color="green">
+                    <img src="./style/img/4.jpg" id="orange" alt="" class="shoe " color="orange">
+                    <img src="./style/img/5.jpg" id="black" alt="" class="shoe " color="black">
+
+                </div> -->
+
+                <div class="product">
+                    <div class="product__images">
+                        <img src="style/img/sofa/sof1.jpg" alt="google pixel 6" class="product__main-image"
+                            id="main-image" />
+
+                        <div class="product__slider-wrap">
+                            <div class="product__slider">
+                                <img src="style/img/sofa/sof1.jpg" alt="google pixel 6"
+                                    class="product__image product__image--active" />
+                                <img src="style/img/sofa/sof2.jpg" alt="google pixel 6" class="product__image" />
+                                <img src="style/img/sofa/sof3.jpg" alt="google pixel 6" class="product__image" />
+                                <img src="style/img/sofa/sof4.jpg" alt="google pixel 6" class="product__image" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info">
+                    <div class="shoeName">
+                        <div>
+                            <h1 class="big">{{product.name}}</h1>
+                            <span class="new">new</span>
+                        </div>
+                        <h3 class="small text_p" style="text-align:justify; line-height: 20px;">This sofa is not only
+                            {{product.disc}}
+                        </h3>
+                    </div>
+                    <div class="description_p">
+                        <h3 class="title_p">Material Info</h3>
+                        <p class="text_p" style="text-align: justify;">
+                           {{product.meterial_info}}
+                        </p>
+                    </div>
+                    <div class="description_p">
+                        <h3 class="title_p">Product Dimension</h3>
+                        <p class="text_p">
+                            Width: {{product.pw}} inches <br>
+                            Depth: {{product.pd}} inches <br>
+                            Height: {{product.ph}} inches <br>
+                            <strong>Seating Dimensions:</strong><br>
+                            Width: {{product.sd}} inches <br>
+                            Depth: {{product.sh}} inches <br>
+                            Height: {{product.sw}} inches <br>
+                            <strong>Arm Height</strong><br>
+                            Height:{{product.ah}} inches <br>
+                            <strong>BACK</strong><br>
+                            Height: {{product.bh}} inches <br>
+                            <strong>LEGS:</strong><br>
+                            Height: {{product.lh}} inches<br>
+                        </p>
+                    </div>
+                    <div class="size-container">
+                        <h3 class="title_p">seater</h3>
+                        <div class="sizes" id="sizes">
+                            <span class="size" id="seat1" onclick="changeImage()">1</span>
+                            <span class="size" id="seat2" onclick="changeImage()">2</span>
+                            <span class="size active_p" id="seat3" onclick="changeImage()">3</span>
+                            <span class="size" id="seat4" onclick="changeImage()">4</span>
+                            <span class="size" id="seat5" onclick="changeImage()">5</span>
+                        </div>
+                    </div>
+                    <div class="color-container">
+                        <h3 class="title_p">Fabric Colors</h3>
+                        <div class="colors">
+                            <span class="color active_p" primary="#2175f5" color="blue"></span>
+                            <span class="color" primary="#f84848" color="red"></span>
+                            <span class="color" primary="#29b864" color="green"></span>
+                            <span class="color" primary="#ff5521" color="orange"></span>
+                            <span class="color" primary="#444" color="black"></span>
+                        </div>
+                    </div>
+                    <div class="buy-price">
+                        <a href="#" class="buy"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                        <div class="price">
+                            <i class="fa fa-inr"></i>
+                            <h1>18000.00</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="{{url_for('static', filename='js/script.js')}}"></script>
+
+    <script src="{{url_for('static', filename='js/main.js')}}"></script>
+
+</body>
+
+</html>

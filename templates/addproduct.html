@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post">
+        <input type="text" name="product_name" id="" placeholder="product name">
+        <input type="text" name="discription" placeholder="product discription">
+        <input type="text" name="meterial_info" id="meterial_info" placeholder="meterial info">
+
+        <label for="category">Add a category</label>
+        <select name="category" id="category" required>
+            {% for cat in categories %}
+            <option value="{{cat.id}}">{{cat.name}}</option>
+            {% endfor %}
+        </select>
+
+
+        <input type="text" name="pw" id="" placeholder="product width">
+        <input type="text" name="pd" id="" placeholder="product depth">
+        <input type="text" name="ph" id="" placeholder="product height">
+        <input type="text" name="sd" id="" placeholder="sitting depth">
+        <input type="text" name="sh" id="" placeholder="sitting height">
+        <input type="text" name="sw" id="" placeholder="sitting width">
+        <input type="text" name="ah" id="" placeholder="arm height">
+        <input type="text" name="bh" id="" placeholder="back height">
+        <input type="text" name="lh" id="" placeholder="leg height">
+
+        <button type="submit">submit</button>
+    </form>
+</body>
+</html>

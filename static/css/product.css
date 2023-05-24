@@ -1,0 +1,329 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none !important;
+  list-style: none;
+}
+
+:root {
+  --bg-color: #222327;
+  --text-color: #fff;
+  --main-color: #29fd53;
+  --clr-neutral-900: hsl(207 19% 9%);
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-accent-400: #42f584;
+  --primary: #2175f5;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* nav bar css */
+header {
+  /* position: fixed; */
+  background: #111;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 100px;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.hamburger {
+  display: none;
+}
+
+.nav-bar ul {
+  display: flex;
+}
+
+.nav-bar ul li a {
+  display: block;
+  color: var(--text-color);
+  font-size: 20px;
+  padding: 10px 25px;
+  border-radius: 50px;
+  transition: 0.3s;
+  margin: 0 5px;
+}
+
+.nav-bar ul li a:hover {
+  color: #111;
+  background: var(--text-color);
+}
+
+.nav-bar ul li a.active {
+  color: var(--main-color);
+  background: var(--text-color);
+}
+
+@media only screen and (max-width:1320px) {
+  header {
+    padding: 0 50px;
+  }
+
+  .nav-bar ul li a:hover {
+    color: #111;
+    background: var(--text-color);
+  }
+}
+
+@media only screen and (max-width:1100px) {
+  header {
+    padding: 0 30px;
+  }
+
+  .nav-bar ul li a:hover {
+    color: #111;
+    background: var(--text-color);
+  }
+}
+
+@media only screen and (max-width:940px) {
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+
+  .hamburger .line {
+    width: 30px;
+    height: 3px;
+    background: var(--text-color);
+    margin: 6px 0;
+  }
+
+  .nav-bar {
+    /* height: 300px; */
+    /*container height of the nav bar to mobile */
+    height: 0;
+    position: absolute;
+    top: 80px;
+    left: 0px;
+    right: 0px;
+    width: 100vw;
+    background: #111;
+    transition: 0.5s;
+    overflow: hidden;
+  }
+
+  .nav-bar.active {
+    height: fit-content;
+  }
+
+  .nav-bar ul {
+    display: block;
+    width: fit-content;
+    margin: 30px auto 0 auto;
+    text-align: center;
+    transition: 0.5s;
+    opacity: 0;
+  }
+
+  .nav-bar.active ul {
+    opacity: 1;
+  }
+
+  .nav-bar ul li a:hover {
+    color: #111;
+    background: var(--text-color);
+  }
+
+  .nav-bar ul li a {
+    margin-bottom: 12px;
+    /* color: red; */
+  }
+
+  h2 {
+    font-size: larger;
+    font-weight: 600;
+  }
+}
+
+/* product description style */
+
+.product_description {
+  margin-top: 5%;
+  display: flex;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.product {
+  width: 100%;
+  height: 100vh;
+}
+
+.product__images {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.product__main-image {
+  max-width: 500px;
+  max-height: 600px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 1px solid #070707;
+}
+
+.product__slider-wrap {
+  max-width: 500px;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.product__slider {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.product__image {
+  max-width: 180px;
+  max-height: 100px;
+  object-fit: cover;
+  cursor: pointer;
+  opacity: 0.5;
+  margin: 0.25rem;
+  border: 1px solid #070707;
+}
+
+.product__image:first-child {
+  margin-left: 0;
+}
+
+.product__image:last-child {
+  margin-right: 0;
+}
+
+.product__image:hover {
+  opacity: 1;
+}
+
+.product__image--active {
+  opacity: 1;
+}
+
+.product__slider::-webkit-scrollbar {
+  height: 10px;
+}
+
+.product__slider::-webkit-scrollbar-thumb {
+  background-color: #f9564f;
+  border-radius: 50px;
+}
+
+/* info design */
+.container_p {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  overflow: hidden;
+}
+
+.card_p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 960px;
+}
+
+.shoeBackground {
+  position: relative;
+  width: 40%;
+  height: 475px;
+  box-shadow: -15px 0 35px rgba(0, 0, 0, 0.1),
+    0 -15px 35px rgba(0, 0, 0, 0.1),
+    0 15px 35px rgba(0, 0, 0, 0.1);
+  transition: .5s;
+}
+
+.gradients {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.gradient {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: -2;
+}
+
+.gradient[color="blue"] {
+  background-image: linear-gradient(45deg, #0136af, #22abfa);
+}
+
+.gradient[color="red"] {
+  background-image: linear-gradient(45deg, #d62926, #ee625f);
+}
+
+.gradient[color="green"] {
+  background-image: linear-gradient(45deg, #11998e, #1ce669);
+}
+
+.gradient[color="orange"] {
+  background-image: linear-gradient(45deg, #fc4a1a, #f7b733);
+}
+
+.gradient[color="black"] {
+  background-image: linear-gradient(45deg, #111, #666);
+}
+
+.shoe {
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  bottom: 0;
+  right: 0;
+  transition: .5s;
+}
+
+.shoe.show {
+  opacity: 1;
+  /* width: min-content;
+  height: min-content; */
+}
+
+.info {
+  width: 70%;
+  background-color: #fff;
+  z-index: 1;
+  /* padding: 35px 40px; */
+  box-shadow: 15px 0 35px rgba(0, 0, 0, 0.1),
+    0 -15px 35px rgba(0, 0, 0, 0.1),
+    0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.shoeName {
+  padding: 0 0 10px 0;
+}
+
+.shoeName div {
+  display: flex;
+  align-items: center;
+}
