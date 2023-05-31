@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post" enctype="multipart/form-data">
+        <input type="text" name="product_name" id="" placeholder="product name" value="{{product.name}}">
+        <input type="text" name="discription" value="{{product.disc}}"  placeholder="product discription">
+        <input type="text" name="meterial_info" value="{{product.meterial_info}}"  id="meterial_info" placeholder="meterial info">
+
+
+
+        <input type="text" name="pw" value="{{product.pw}}" id="" placeholder="product width">
+        <input type="text" name="pd" value="{{product.pd}}" id="" placeholder="product depth">
+        <input type="text" name="ph" value="{{product.ph}}" id="" placeholder="product height">
+        <input type="text" name="sd" value="{{product.sd}}" id="" placeholder="sitting depth">
+        <input type="text" name="sh" value="{{product.sh}}" id="" placeholder="sitting height">
+        <input type="text" name="sw" value="{{product.sw}}" id="" placeholder="sitting width">
+        <input type="text" name="ah" value="{{product.ah}}" id="" placeholder="arm height">
+        <input type="text" name="bh" value="{{product.bh}}" id="" placeholder="back height">
+        <input type="text" name="lh" value="{{product.lh}}" id="" placeholder="leg height">
+        <input type="text" name="price" value="{{product.price}}" id="" placeholder="price">
+        <input type="file" name="img1">
+        <input type="file" name="img2">
+        <input type="file" name="img3">
+        <input type="file" name="img4">
+
+        <button type="submit" name="delete">delete</button>
+        <button type="submit">submit</button>
+    </form>
+</body>
+</html>

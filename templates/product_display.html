@@ -46,7 +46,7 @@
                 {% for product in all_products %}
                 <li class="product">
                     <a href="{{url_for('show_product',id=product.id)}}">
-                        <img src="./style/img/1.jpg" alt="Product 1">
+                        <img src="{{url_for('static', filename='img/productimg/'+product.img1)}}" alt="Product 1">
                         <h2>{{ product.name }}</h2>
                         <p>{{ product.disc }}
                         </p>

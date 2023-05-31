@@ -43,13 +43,12 @@
         </div>
         <section class="products">
             <ul class="product-list">
-                {% for cat in categories %}
+                {% for product in all_products %}
                 <li class="product">
-                    <a href="{{url_for('product_display',id=cat.id)}}">
-                        <img src="{{url_for('static', filename='img/catimg/'+ cat.catimg)}}" alt="Product 1">
-                        <h2>{{ cat.name }}</h2>
-                        <p>
-                            {{ cat.disc }}
+                    <a href="{{url_for('edit_product',id=product.id)}}">
+                        <img src="{{url_for('static', filename='img/productimg/'+product.img1)}}" alt="Product 1">
+                        <h2>{{ product.name }}</h2>
+                        <p>{{ product.disc }}
                         </p>
                     </a>
                 </li>
