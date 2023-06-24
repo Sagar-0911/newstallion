@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/prodcss.css')}}">
+    <script src="https://kit.fontawesome.com/3477ae541c.js" crossorigin="anonymous"></script>
+    <title>{{cat}}</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <h3 class="headeing">{{cat}}</h3> <!--title-->
+        <div class="menu-container">
+            {% for product in all_products %}
+            <!--products-container-->
+
+            <div class="menu" data-name="{{product.id}}"> <!--product-->
+                <img src="{{url_for('static', filename='img/productimg/'+product.img1)}}" alt="imag">
+                <h3>{{ product.name }}</h3>
+                <div class="price">{{product.price}}</div>
+            </div>
+
+            {% endfor %}
+        </div>
+    </div>
+
+
+    <div class="menu-preview"> <!--products-preview-->
+        {% for product in all_products %}
+        <div class="preview" data-target="{{product.id}}">
+            <i class="fa-solid fa-xmark"></i>
+            <img src="{{url_for('static', filename='img/productimg/'+product.img1)}}" alt="">
+            <h3>{{product.title}}</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p>{{product.disc}}</p>
+            <div class="price">{{product.disc|truncate(3)}}</div>
+            <a href="{{url_for('show_product',id=product.id)}}" class="buy">go to product</a>
+        </div>
+        {% endfor %}
+
+
+
+    </div>
+
+    <script src="{{url_for('static', filename='js/productlist.js')}}"></script>
+</body>
+</html>

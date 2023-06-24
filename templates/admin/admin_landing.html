@@ -1,25 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/landing.css')}}">
     <title>Document</title>
 
     </style>
 </head>
+
 <body>
     <h1>Admin Page</h1>
     <br><br>
-    <a href="/admin/addproduct">Add Product</a>
-    <br><br><br>
-    <a href="/admin/addcategory">Add category</a>
-    <br><br><br>
-    <a href="/admin/editcategory">Edit Category</a>
-    <br><br><br>
-    <a href="/admin/editproduct/selectcat">Edit product</a>
+    <div class="container">
+        <div class="main">
+            <div class="sub">
+                <a href="/admin/addproduct">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>Add Product</a>
+            </div>
 
-    
+            <div class="sub">
+                <a href="/admin/addcategory">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>Add category</a>
+            </div>
+        </div>
+        <div class="main">
+            <div class="sub">
+                <a href="/admin/editcategory">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>Edit Category</a>
+            </div>
+
+            <div class="sub">
+                <a href="/admin/editproduct/selectcat">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>Edit product</a>
+            </div>
+        </div>
+    </div>
+
+
 
 </body>
+
 </html>

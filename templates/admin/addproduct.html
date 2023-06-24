@@ -1,41 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/addproduct.css')}}">
     <title>Document</title>
+    <style>
+        .preview-container {
+            display: inline-block;
+            text-align: center;
+            margin: 10px;
+        }
+
+        .preview-image {
+            max-width: 200px;
+            max-height: 200px;
+        }
+
+        .remove-btn {
+            margin-top: 5px;
+        }
+    </style>
 </head>
+
 <body>
-    <form method="post" enctype="multipart/form-data">
-        <input type="text" name="product_name" id="" placeholder="product name">
-        <input type="text" name="discription" placeholder="product discription">
-        <input type="text" name="meterial_info" id="meterial_info" placeholder="meterial info">
+    <div class="box">
+        <form method="post" enctype="multipart/form-data" autocomplete="off">
+            <h2>Add Products</h2>
+            <div class="inputbox">
+                <input type="text" name="product_name" id="" required required>
+                <span>Product Name</span>
+                <i></i>
+            </div>
+            <div class="inputbox">
+                <input type="" name="discription" required>
+                <span>Product Description</span>
+                <i></i>
+            </div>
+            <div class="inputbox">
+                <input type="text" name="meterial_info" id="meterial_info" required>
+                <span>Material Info</span>
+                <i></i>
+            </div>
 
-        <label for="category">Add a category</label>
-        <select name="category" id="category" required>
-            {% for cat in categories %}
-            <option value="{{cat.id}}">{{cat.name}}</option>
-            {% endfor %}
-        </select>
+            <div class="inputbox">
+                <label for="category">Add a category</label>
+                <select name="category" id="category" required>
+                    {% for cat in categories %}
+                    <option value="{{cat.id}}">{{cat.name}}</option>
+                    {% endfor %}
+                </select>
+                <span></span>
+            </div>
 
+            <div class="inputbox">
+                <input type="text" name="pw" id="" required>
+                <span>Product width</span>
+                <i></i>
+            </div>
+            <div class="inputbox">
+                <input type="text" name="pd" id="" required>
+                <span>product depth</span>
+                <i></i>
+            </div>
+            <div class="inputbox">
+                <input type="text" name="ph" id="" required>
+                <span>product height</span>
+                <i></i>
+            </div>
+            <div class="inputbox">
+                <input type="text" name="sd" id="" required>
+                <span>sitting depth</span>
+                <i></i>
+            </div>
+            <div class="inputbox">
+                <input type="text" name="sh" id="" required>
+                <span>sitting height</span>
+                <i></i>
+            </div>
+            <div class="inputbox">
+                <input type="text" name="sw" id="" required>
+                <span>sitting width</span>
+                <i></i>
+            </div>
+            <div class="inputbox">
+                <input type="text" name="ah" id="" required>
+                <span>arm height</span>
+                <i></i>
+            </div>
+            <div class="inputbox">
+                <input type="text" name="bh" id="" required>
+                <span>back height</span>
+                <i></i>
+            </div>
+            <div class="inputbox">
+                <input type="text" name="lh" id="" required>
+                <span>leg height</span>
+                <i></i>
+            </div>
+            <div class="inputbox">
+                <input type="text" name="price" id="" required>
+                <span>price</span>
+                <i></i>
+            </div>
 
-        <input type="text" name="pw" id="" placeholder="product width">
-        <input type="text" name="pd" id="" placeholder="product depth">
-        <input type="text" name="ph" id="" placeholder="product height">
-        <input type="text" name="sd" id="" placeholder="sitting depth">
-        <input type="text" name="sh" id="" placeholder="sitting height">
-        <input type="text" name="sw" id="" placeholder="sitting width">
-        <input type="text" name="ah" id="" placeholder="arm height">
-        <input type="text" name="bh" id="" placeholder="back height">
-        <input type="text" name="lh" id="" placeholder="leg height">
-        <input type="text" name="price" id="" placeholder="price">
-        <input type="file" name="img1">
-        <input type="file" name="img2">
-        <input type="file" name="img3">
-        <input type="file" name="img4">
+            <div class="inputbox">
+                <input type="file" id="imageUpload" name="img1">
+                <span>Input Images</span>
+                <i></i>
+            </div>
+            <div class="inputbox">
+                <input type="file" id="imageUpload" name="img2">
+                <span>Input Images</span>
+                <i></i>
+            </div>
+            <div class="inputbox">
+                <input type="file" id="imageUpload" name="img3">
+                <span>Input Images</span>
+                <i></i>
+            </div>
+            <div class="inputbox">
+                <input type="file" id="imageUpload" name="img4">
+                <span>Input Images</span>
+                <i></i>
+            </div>
+            <!-- <input type="file" name="img1">
+            <input type="file" name="img2">
+            <input type="file" name="img3">
+            <input type="file" name="img4"> -->
+            <!-- <div id="imagePreviewContainer"></div> -->
+            <input type="submit" value="sumbit">
+        </form>
+    </div>
 
-        <button type="submit">submit</button>
-    </form>
+    <script>
+        const input = document.getElementById('imageUpload');
+        input.addEventListener('change', handleFileSelect);
+
+        function handleFileSelect(event) {
+            const files = event.target.files;
+
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+                const name = `image${i + 1}`;
+
+                // Create a new input element dynamically
+                const newInput = document.createElement('input');
+                newInput.setAttribute('type', 'hidden');
+                newInput.setAttribute('name', name);
+                newInput.setAttribute('value', file.name);
+
+                // Append the new input element to the form
+                const form = document.querySelector('form');
+                form.appendChild(newInput);
+
+                // Create a container element for each image preview
+                const previewContainer = document.createElement('div');
+                previewContainer.classList.add('preview-container');
+
+                // Create an image preview element
+                const img = document.createElement('img');
+                img.classList.add('preview-image');
+                img.file = file;
+
+                // Create a remove button for the image preview
+                const removeBtn = document.createElement('button');
+                removeBtn.classList.add('remove-btn');
+                removeBtn.textContent = 'Remove';
+                removeBtn.addEventListener('click', function () {
+                    previewContainer.remove();
+                    newInput.remove();
+                });
+
+                // Create a FileReader to read the image file
+                const reader = new FileReader();
+
+                // Set up the FileReader onload event
+                reader.onload = (function (image) {
+                    return function (e) {
+                        image.src = e.target.result;
+                    };
+                })(img);
+
+                // Read the image file as a data URL
+                reader.readAsDataURL(file);
+
+                // Append the image preview and remove button to the container
+                previewContainer.appendChild(img);
+                previewContainer.appendChild(removeBtn);
+
+                // Append the container to the main preview container
+                document.getElementById('imagePreviewContainer').appendChild(previewContainer);
+            }
+        }
+    </script>
 </body>
+
 </html>

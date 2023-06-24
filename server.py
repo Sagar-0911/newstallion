@@ -84,8 +84,15 @@ def product():
 @app.route('/products/<int:id>')
 def product_display(id):
     all_products = Product.query.filter_by(cat_id=id)
+    cat = Category.query.filter_by(id=id).first().name
+    # print(cat)
 
-    return render_template("product_display.html", all_products=all_products)
+    return render_template("new_product_list.html", all_products=all_products, cat=cat)
+
+@app.route("/addcart")
+def addcart():
+
+    return render_template("indexc.html")
 
 @app.route('/product/view/<int:id>')
 def show_product(id):

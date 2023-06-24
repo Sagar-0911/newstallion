@@ -152,10 +152,11 @@ header {
 
 /* slider image css */
 .imgSlider {
+    margin-top: 5% !important;
     margin: 0 auto;
     width: 50%;
     height: 550px;
-    background-image: url("/style/img/1.jpg");
+    background-image: url("../img/1.jpg");
     /* background-color: #1ce669; */
     background-size: 100% 100%;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -164,28 +165,36 @@ header {
 
 @keyframes changeImage {
     0% {
-        background-image: url("/style/img/2.jpg");
+        background-image: url("../img/2.jpg");
     }
 
     20% {
-        background-image: url("/style/img/3.jpg");
+        background-image: url("../img/3.jpg");
     }
 
     40% {
-        background-image: url("/style/img/4.jpg");
+        background-image: url("../img/4.jpg");
     }
 
     60% {
-        background-image: url("/style/img/5.jpg");
+        background-image: url("../img/5.jpg");
     }
 
     80% {
-        background-image: url("/style/img/6.jpg");
+        background-image: url("../img/6.jpg");
     }
 
     100% {
-        background-image: url("/Stainless_steel/style/img/7.jpg");
+        background-image: url("../img/7.jpg");
     }
+}
+
+@media (max-width: 1090px){
+.imgSlider {
+    width: 85%;
+    height: 350px;
+    margin-top: 20% !important;
+}
 }
 
 .carousel-inner {

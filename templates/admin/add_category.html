@@ -5,17 +5,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/addproduct.css')}}">
     <title>Add category</title>
 </head>
 
 <body>
-    <h2>Add Category</h2>
-
-    <form method="post" enctype="multipart/form-data">
-        <input type="text" name="category" id="" placeholder="enter category name">
-        <input type="text" name="disc" id="" placeholder="category discription">
-        <input type="file" name="catimg">
-        <button type="submit">Add Category</button>
+    <form method="post" enctype="multipart/form-data" autocomplete="off">
+        <h2>Add Category</h2>
+        <div class="inputbox">
+            <input type="text" name="category" id="" required>
+            <span>enter category name</span>
+            <i></i>
+        </div>
+        <div class="inputbox">
+            <input type="text" name="disc" id="" required>
+            <span>Category Description</span>
+            <i></i>
+        </div>
+        <div class="inputbox">
+            <input type="file" class="file" name="catimg">
+            <span>Enter the display image</span>
+            <i></i>
+        </div>
+        <input type="submit" value="Add Category">
     </form>
 
 </body>
